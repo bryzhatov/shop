@@ -16,4 +16,9 @@ public class PageController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("/signin")
+    public String signIn() {
+        return "sign_in";
+    }
 }
