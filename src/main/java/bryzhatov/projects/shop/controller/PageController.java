@@ -12,8 +12,8 @@ import java.util.Map;
 @Controller
 public class PageController {
 
-    @RequestMapping("/t")
-    public String index(Map<String, Object> model) {
+    @RequestMapping("/")
+    public String index() {
         return "index";
     }
 }
