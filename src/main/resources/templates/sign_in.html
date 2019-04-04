@@ -3,10 +3,35 @@
 <div class="container">
     <div class="row justify-content-lg-center">
         <div class="form-group card col-lg-3" style="margin-top:15%">
-            <input class="form-control my-2" placeholder="login">
-            <input class="form-control my-2" placeholder="password">
-            <button type="button" class="btn btn-light my-2">Login</button>
-            <button type="button" class="btn btn-outline-success my-1">Sign Up</button>
+            <h3 style="text-align: center" class="my-2">Sign In</h3>
+
+            <div class="my-1">
+                <label class="sr-only" for="login">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="login" placeholder="login">
+                </div>
+            </div>
+
+            <div class="my-1">
+                <label class="sr-only" for="password">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+            </div>
+
+            <form action="/login" class="my-2">
+                <button type="submit" class="btn btn-light" style="width:100%">Login</button>
+            </form>
+
+            <form action="/signup" class="my-2">
+                <button type="submit" class="btn btn-outline-success" style="width:100%">Sign Up</button>
+            </form>
         </div>
     </div>
 </div>

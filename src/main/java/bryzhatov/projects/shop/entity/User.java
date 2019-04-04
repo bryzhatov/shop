@@ -3,6 +3,7 @@ package bryzhatov.projects.shop.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * @author Dmitry Bryzhatov
@@ -22,4 +23,9 @@ public class User {
     @Column(length = 20)
     private String login;
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    private Set<Role> roles;
 }
