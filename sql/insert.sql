@@ -1,13 +1,17 @@
-insert into product (name) values ('Computer1');
-insert into product (name) values ('Computer2');
-insert into product (name) values ('Computer3');
-insert into product (name) values ('Computer4');
-insert into product (name) values ('Computer5');
+insert into product (name, description_small, description_full, price) values (
+'iPhone 7 32 Gb Black'
+,
+'iPhone 7 - это смартфон вобравший в себя актуальные разработки в индустрии на момент выхода и все лучшие черты предыдущих поколений.'
+,
+'iPhone 7 - это смартфон вобравший в себя актуальные разработки в индустрии на момент выхода и все лучшие черты предыдущих поколений.
+Визуальные отличия в дизайне минимальны, наиболее заметным изменение является измененная конструкция разделителей антенны и отсутствие 3,5-мм аудиоразъема.
+Его роль теперь возложена на порт Apple Lightning. Дисплей не претерпел кардинальных изменений, это качественная IPS-матрица с широким цветовым охватом.
+Сердцем смартфона теперь является четырехъядерный процессор Apple A10 Fusion, оснащенный мощным графическим ускорителем.
+Время автономной работы также подверглось улучшению. Теперь, по заявлению производителя, iPhone 7 способен проработать на насколько часов дальше во многих стандартных режимах использования, чем iPhone 6s.
+Фотографические возможности смартфона представлены основной 12-мегапиксельной камерой с апертурой f/1.8 и фронтальной 7-мп камерой для селфи.'
+,
+538.80
+);
 
-insert into product (name) values ('Phone1');
-insert into product (name) values ('Phone2');
-insert into product (name) values ('Phone3');
-insert into product (name) values ('Phone4');
-insert into product (name) values ('Phone5');
 
 insert into users (name, last_name, login, password) values ('Dima', 'Bryzhatov', 'bryzhatov', 'dima12345');

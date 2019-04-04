@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Dmitry Bryzhatov
  * @since 2019-04-01
@@ -20,5 +23,10 @@ public class ProductController {
     @RequestMapping("/{id}")
     public Product get(@PathVariable Integer id) {
         return productService.get(id);
+    }
+
+    @RequestMapping("/all")
+    public List<Product> getAll() {
+        return productService.all();
     }
 }
