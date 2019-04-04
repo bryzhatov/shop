@@ -20,7 +20,7 @@ function addProductToGrid(element) {
     $('#'+element.id).find('#product_name').text(element.name);
 
     var $link = $('#'+element.id).find('#product_link');
-    $link.attr('href', $link.attr('href') + element.id);
+    $link.attr('href', '/product/' + element.id);
 
     $('#'+element.id).find('#product_price').text(element.price + ' $');
     $('#'+element.id).find('#product_description').text(element.descriptionSmall);
