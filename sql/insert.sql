@@ -11,7 +11,10 @@ insert into product (name, description_small, description_full, price) values (
 Фотографические возможности смартфона представлены основной 12-мегапиксельной камерой с апертурой f/1.8 и фронтальной 7-мп камерой для селфи.'
 ,
 538.80
+,
+'https://i1.rozetka.ua/goods/11266683/74615520_images_11266683222.jpg'
 );
 
 
-insert into users (name, last_name, login, password) values ('Dima', 'Bryzhatov', 'bryzhatov', 'dima12345');
+insert into users (name, last_name, username, password, is_account_non_expired,
+is_account_non_locked, is_credentials_non_expired, is_enabled) values ('Dima', 'Bryzhatov', 'bryzhatov', 'pass', true, true, true, true);

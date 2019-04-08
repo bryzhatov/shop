@@ -1,6 +1,10 @@
 package bryzhatov.projects.shop.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,22 +14,34 @@ import java.util.Set;
  * @since 2019-04-02
  */
 @Data
-@Entity
 @Table(name = "users")
-public class User {
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(length = 15)
     private String name;
-    @Column(length = 15)
+
+    @Column(name = "last_name", length = 15)
     private String lastName;
-    @Column(length = 20)
-    private String login;
+
+    @Column(name = "username", length = 20)
+    private String username;
+
     private String password;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    private Set<Role> roles;
+    private Set<Role> authorities;
+
+    private boolean isCredentialsNonExpired;
+    private boolean isAccountNonExpired;
+    private boolean isAccountNonLocked;
+    private boolean isEnabled;
 }

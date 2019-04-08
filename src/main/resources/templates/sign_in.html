@@ -5,31 +5,28 @@
         <div class="form-group card col-lg-3" style="margin-top:15%">
             <h3 style="text-align: center" class="my-2">Sign In</h3>
 
-            <div class="my-1">
-                <label class="sr-only" for="login">Username</label>
-                <div class="input-group">
+            <form method="post" action="/login">
+                <div class="mt-1 input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="login" placeholder="login">
-                </div>
-            </div>
 
-            <div class="my-1">
-                <label class="sr-only" for="password">Username</label>
-                <div class="input-group">
+                    <input id="username" name="username" type="text" class="form-control" placeholder="login">
+                </div>
+
+                <div class="mt-2 input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="password" class="form-control" id="password" placeholder="password">
-                </div>
-            </div>
 
-            <form action="/login" class="my-2">
-                <button type="submit" class="btn btn-light" style="width:100%">Login</button>
+                    <input id="password" name="password" type="password" class="form-control" placeholder="password">
+                </div>
+
+                <button type="submit" class="mt-2 btn btn-light" style="width:100%">Login</button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
 
-            <form action="/signup" class="my-2">
+            <form action="/signup" class="mb-3">
                 <button type="submit" class="btn btn-outline-success" style="width:100%">Sign Up</button>
             </form>
         </div>
