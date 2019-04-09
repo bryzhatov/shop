@@ -27,27 +27,34 @@ public class UserDao extends JdbcDaoSupport {
         setDataSource(dataSource);
     }
 
-    public User findById(long id) {
+    public Optional<User> findById(long id) {
         User user = getJdbcTemplate().queryForObject("select * from users where id = ?",
                 new Object[]{id},
                 getRowMapper());
 
-        user.setAuthorities(getRoles(id));
-        return user;
+        if (user != null) {
+            user.setAuthorities(getRoles(id));
+        }
+
+        return Optional.ofNullable(user);
     }
 
-    public User findByUsername(String username) {
+    public Optional<User> findByUsername(String username) {
         User user = getJdbcTemplate().queryForObject("select * from users where username = ?", new Object[]{username}, getRowMapper());
-        user.setAuthorities(getRoles(user.getId()));
-        return user;
+
+        if(user != null){
+            user.setAuthorities(getRoles(user.getId()));
+        }
+
+        return Optional.ofNullable(user);
     }
 
     private Set<Role> getRoles(long user_id) {
         Set<Role> roles = new TreeSet<>();
         List<Map<String, Object>> rows = getJdbcTemplate().queryForList("select * from user_role where user_id = ?", user_id);
 
-        for(Map<String, Object> row : rows){
-            Role role = Role.valueOf((String)row.get("authorities"));
+        for (Map<String, Object> row : rows) {
+            Role role = Role.valueOf((String) row.get("authorities"));
             roles.add(role);
         }
 

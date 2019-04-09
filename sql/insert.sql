@@ -1,4 +1,4 @@
-insert into product (name, description_small, description_full, price) values (
+insert into product (name, description_small, description_full, price, image_url) values (
 'iPhone 7 32 Gb Black'
 ,
 'iPhone 7 - это смартфон вобравший в себя актуальные разработки в индустрии на момент выхода и все лучшие черты предыдущих поколений.'

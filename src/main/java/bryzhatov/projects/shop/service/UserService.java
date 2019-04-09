@@ -14,19 +14,21 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService implements UserDetailsService {
-//    @Autowired
+    //    @Autowired
 //    private UserRepository userRepository;
     @Autowired
     private UserDao userDao;
 
     public User get(long id) {
-        return userDao.findById(id);
+        return userDao.findById(id).orElseThrow(
+                () -> new UsernameNotFoundException("Can't get user by id.")
+        );
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User byUsername = userDao.findByUsername(username);
-        System.out.println(byUsername);
-        return byUsername;
+        return userDao.findByUsername(username).orElseThrow(
+                () -> new UsernameNotFoundException("Can't get user by id.")
+        );
     }
 }
