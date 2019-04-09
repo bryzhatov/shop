@@ -1,7 +1,7 @@
 package bryzhatov.projects.shop.service;
 
 import bryzhatov.projects.shop.entity.User;
-import bryzhatov.projects.shop.repository.UserRepository;
+import bryzhatov.projects.shop.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,27 +14,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService implements UserDetailsService {
+//    @Autowired
+//    private UserRepository userRepository;
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userDao;
 
     public User get(long id) {
-        return userRepository.findById(id).get();
+        return userDao.findById(id);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User byUsername = userRepository.findByUsername(username);
+        User byUsername = userDao.findByUsername(username);
         System.out.println(byUsername);
-        return userRepository.findByUsername(username);
+        return byUsername;
     }
 }
-
-//User.builder()
-//        .username(username)
-//        .password("password")
-//        .authorities(Collections.singletonList(Role.USER))
-//        .isAccountNonExpired(true)
-//        .isAccountNonLocked(true)
-//        .isCredentialsNonExpired(true)
-//        .isEnabled(true)
-//        .build();

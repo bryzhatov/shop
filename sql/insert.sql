@@ -16,5 +16,7 @@ insert into product (name, description_small, description_full, price) values (
 );
 
 
-insert into users (name, last_name, username, password, is_account_non_expired,
-is_account_non_locked, is_credentials_non_expired, is_enabled) values ('Dima', 'Bryzhatov', 'bryzhatov', 'pass', true, true, true, true);
+insert into users (id, name, last_name, username, password, is_account_non_expired,
+is_account_non_locked, is_credentials_non_expired, is_enabled) values (1, 'Dima', 'Bryzhatov', 'bryzhatov', 'pass', true, true, true, true);
+
+insert into user_role (user_id, authorities) values (1, 'USER')
