@@ -1,11 +1,47 @@
-<html>
+<#include "/conf/header.html">
+
 <head>
-    <title>Shop</title>
+    <link rel="stylesheet" href="/static/css/grid_product.css">
 </head>
-<body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<div class="container">
 
-</body>
-</html>
+    <div id="products">
+        <div class="row pt-4" hidden>
+            <a id="product_link" href="" style="color:black; text-decoration:none;">
+                <div class="col-md-4">
+                    <figure class="card card-product">
+
+                        <div class="img-wrap"><img src="https://i1.rozetka.ua/goods/11266683/74615520_images_11266683222.jpg"></div>
+
+                        <figcaption class="info-wrap">
+                            <h4 class="title" id="product_name">Another name of item</h4>
+                            <p class="desc" id="product_description">Some small description goes here</p>
+                            <div class="rating-wrap">
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-rating">154 orders </div>
+                            </div> <!-- rating-wrap.// -->
+                        </figcaption>
+
+                        <div class="bottom-wrap">
+                            <a href="" class="btn btn-lg btn-outline-success float-right">Buy</a>
+                            <div class="price-wrap h4 pt-2">
+                                <span id="product_price" class="price-new">$1280</span>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- bottom-wrap.// -->
+                    </figure>
+                </div> <!-- col // -->
+            </a>
+        </div> <!-- row.// -->
+    </div>
+</div>
+
+<#include "/conf/footer.html">
+
+<script src="/static/js/index.js"></script>
+
+<script>
+    $( document ).ready(function() {
+        getProductsByRating(0, 5)
+    });
+</script>

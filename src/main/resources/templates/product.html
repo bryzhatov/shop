@@ -1,0 +1,24 @@
+<#include "/conf/header.html">
+
+<div class="container">
+    <div class="row">
+        <div class="my-4" style="box-shadow: 0 0 25px rgba(0,0,0,0.5); border-radius: 3px 3px 3px 3px;">
+            <div class="col-lg-6 img-wrap">
+                <img src="${product.imageUrl}">
+            </div>
+            ${product.name}
+        </div>
+    </div>
+
+</div>
+
+<style>
+.img-wrap img {
+    height: 400px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+</style>
+
+<#include "/conf/footer.html">

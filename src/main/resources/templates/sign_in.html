@@ -1,0 +1,36 @@
+<#include "/conf/header.html">
+
+<div class="container">
+    <div class="row justify-content-lg-center">
+        <div class="form-group card col-lg-3" style="margin-top:15%">
+            <h3 style="text-align: center" class="my-2">Sign In</h3>
+
+            <form method="post" action="/login">
+                <div class="mt-1 input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+
+                    <input id="username" name="username" type="text" class="form-control" placeholder="login">
+                </div>
+
+                <div class="mt-2 input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                    </div>
+
+                    <input id="password" name="password" type="password" class="form-control" placeholder="password">
+                </div>
+
+                <button type="submit" class="mt-2 btn btn-light" style="width:100%">Login</button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
+
+            <form action="/signup" class="mb-3">
+                <button type="submit" class="btn btn-outline-success" style="width:100%">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<#include "/conf/footer.html">
